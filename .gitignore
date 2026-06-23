@@ -1,2 +1,5 @@
 /.idea/
 /venv/
+/test-results/
+/.env
+__pycache__/
