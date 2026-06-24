@@ -1,11 +1,11 @@
 from playwright.sync_api import Page
 
-from config.config import BASE_URL
+from config.config import UI_BASE_URL
 from pom.base_page import BasePage
 
 
 class PracticePage(BasePage):
-    URL = f"{BASE_URL}/practice/"
+    URL = f"{UI_BASE_URL}/practice/"
 
     def __init__(self, page: Page):
         super().__init__(page)

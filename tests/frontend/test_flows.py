@@ -1,7 +1,7 @@
 from playwright.sync_api import expect
 
 import assertions.page_assertions as page_assertions
-from config.config import USERNAME, PASSWORD
+from config.config import UI_USERNAME, UI_PASSWORD
 
 
 def test_login_flow(
@@ -15,7 +15,7 @@ def test_login_flow(
     practice_page.click_login()
     page_assertions.expect_login_page_loaded(login_page)
 
-    login_page.login(USERNAME, PASSWORD)
+    login_page.login(UI_USERNAME, UI_PASSWORD)
     page_assertions.expect_logged_in_page_loaded(logged_in_page)
 
 
@@ -30,7 +30,7 @@ def test_login_negative_username(
     practice_page.click_login()
     page_assertions.expect_login_page_loaded(login_page)
 
-    login_page.login(USERNAME + "_incorrect", PASSWORD)
+    login_page.login(UI_USERNAME + "_incorrect", UI_PASSWORD)
     expect(login_page.error_invalid_username).to_be_visible()
     expect(login_page.error_invalid_password).not_to_be_visible()
 
@@ -46,6 +46,6 @@ def test_login_negative_password(
     practice_page.click_login()
     page_assertions.expect_login_page_loaded(login_page)
 
-    login_page.login(USERNAME, PASSWORD + "_incorrect")
+    login_page.login(UI_USERNAME, UI_PASSWORD + "_incorrect")
     expect(login_page.error_invalid_password).to_be_visible()
     expect(login_page.error_invalid_username).not_to_be_visible()
