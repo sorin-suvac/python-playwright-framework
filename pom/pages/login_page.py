@@ -10,14 +10,16 @@ class LoginPage(BasePage):
     def __init__(self, page: Page):
         super().__init__(page)
 
-        self.username_input = page.locator("#username")
-        self.password_input = page.locator("#password")
-        self.submit_button = page.locator("#submit")
+        self.input_username = page.locator("#username")
+        self.input_password = page.locator("#password")
+        self.btn_submit = page.locator("#submit")
+        self.error_invalid_username = page.locator('#error:has-text("Your username is invalid!")')
+        self.error_invalid_password = page.locator('#error:has-text("Your password is invalid!")')
 
     def open(self):
         self.open_url(self.URL)
 
     def login(self, username: str, password: str):
-        self.fill(self.username_input, username)
-        self.fill(self.password_input, password)
-        self.click(self.submit_button)
+        self.fill(self.input_username, username)
+        self.fill(self.input_password, password)
+        self.click(self.btn_submit)

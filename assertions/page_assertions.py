@@ -8,9 +8,9 @@ def expect_practice_page_loaded(practice_page):
 
 
 def expect_login_page_loaded(login_page):
-    expect(login_page.username_input).to_be_visible()
-    expect(login_page.password_input).to_be_visible()
-    expect(login_page.submit_button).to_be_visible()
+    expect(login_page.input_username).to_be_visible()
+    expect(login_page.input_password).to_be_visible()
+    expect(login_page.btn_submit).to_be_visible()
 
 
 def expect_logged_in_page_loaded(logged_in_page):
