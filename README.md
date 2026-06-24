@@ -1,1 +1,1 @@
-python-playwright test automation framework
+python-playwright-pytest test automation poc
