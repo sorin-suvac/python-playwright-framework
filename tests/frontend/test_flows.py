@@ -1,9 +1,11 @@
+import pytest
 from playwright.sync_api import expect
 
 import assertions.page_assertions as page_assertions
 from config.config import UI_USERNAME, UI_PASSWORD
 
 
+@pytest.mark.ui
 def test_login_flow(
         practice_page,
         login_page,
@@ -19,6 +21,7 @@ def test_login_flow(
     page_assertions.expect_logged_in_page_loaded(logged_in_page)
 
 
+@pytest.mark.ui
 def test_login_negative_username(
         practice_page,
         login_page,
@@ -35,6 +38,7 @@ def test_login_negative_username(
     expect(login_page.error_invalid_password).not_to_be_visible()
 
 
+@pytest.mark.ui
 def test_login_negative_password(
         practice_page,
         login_page,

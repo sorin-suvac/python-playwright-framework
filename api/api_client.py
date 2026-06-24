@@ -1,12 +1,12 @@
 class ApiClient:
-    def __init__(self, playwright, UI_BASE_URL, token=None):
+    def __init__(self, playwright, base_url, token=None):
         headers = {}
 
         if token:
             headers["Authorization"] = f"Bearer {token}"
 
         self.api = playwright.request.new_context(
-            UI_BASE_URL=UI_BASE_URL,
+            base_url=base_url,
             extra_http_headers=headers,
         )
 
