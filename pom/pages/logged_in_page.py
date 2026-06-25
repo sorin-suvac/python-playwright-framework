@@ -10,7 +10,7 @@ class LoggedInPage(BasePage):
     def __init__(self, page: Page):
         super().__init__(page)
 
-        self.btn_logout = page.locator("text=Log out")
+        self.btn_logout = page.locator("#wp-block-button__link").filter(has_text="Log out")
 
     def open(self):
         self.open_url(self.URL)

@@ -1,6 +1,6 @@
 class ApiClient:
     def __init__(self, playwright, base_url, token=None):
-        headers = {}
+        headers = {"Content-Type": "application/json"}
 
         if token:
             headers["Authorization"] = f"Bearer {token}"

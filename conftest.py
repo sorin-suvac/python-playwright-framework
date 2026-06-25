@@ -1,4 +1,4 @@
 pytest_plugins = [
-    "tests.fixtures.api_hooks",
-    "tests.fixtures.page_hooks"
+    "fixtures.api_hooks",
+    "fixtures.page_hooks"
 ]
